@@ -1,0 +1,21 @@
+<h2> Create Account</h2>
+<%=form_tag "/users", method: :post do%>
+  <div class="mb-3 mt-3">
+  <%= label_tag :email%>
+  <%= text_field_tag :email%>
+  </div>
+  <div class="mb-3 mt-3">
+  <%= label_tag :password%>
+  <%= password_field_tag :password%>
+  </div>
+  <div class="mb-3 mt-3">
+  <%= label_tag :password_confirmation%>
+  <%= password_field_tag :password_confirmation%>
+  </div>
+ 
+  <%= submit_tag "Sign Up", class: "btn btn-secondary"%>
+<%end%>
+  <div class="mb-3 mt-3" >
+    <%= link_to 'Back to Login', login_path, class: "btn btn-warning" %>
+  </div>
+
