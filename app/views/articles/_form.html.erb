@@ -15,11 +15,13 @@
     <% end %>
   </div>
 
+
+
   <div>
   <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: article.status  %>
 </div>
-
+  
   <div>
     <%= form.submit %>
   </div>
