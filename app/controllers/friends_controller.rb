@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @friends = Friendship.all
+    @friendships = Friendship.all
   end
   def new
     @friends = Friendship.new

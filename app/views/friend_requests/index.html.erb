@@ -9,5 +9,28 @@
         <button type="button" class="btn btn-decline text-white font-weight-bold"><i class="fas fa-user-times"></i> Decline</button>
     </div>
   </div>
+  <div class="container">
+  <h1>Friends</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Accept</th>
+        <th>Decline</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friend_request.each do |request| %>
+        <tr>
+          <%if request.status.nil?%>
+          <td><%= User.find(request.sent_by_id).email %></td>
+          <td><%= link_to 'accept friend', accept_friend_friend_requests_path(:request => request,:status => true ) %></td>
+          <td><%= link_to 'decline friend', accept_friend_friend_requests_path(:request => request,:status => false ) %></td>
+          <%end%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Friend Request", new_friend_path %>
 </div>
-  
+</div>

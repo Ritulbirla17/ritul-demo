@@ -3,16 +3,16 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Sent_by Id</th>
-        <th>Sent_to_Id</th>
+        <th>Sender</th>
+        <th>Reciever</th>
         <th>Status</th>
       </tr>
     </thead>
     <tbody>
-      <% @friends.each do |friendship| %>
+      <% @friendships.each do |friendship| %>
         <tr>
-          <td><%= friendship.sent_by_id %></td>
-          <td><%= friendship.sent_to_id%></td>
+          <td><%= User.find(friendship.sent_by_id).email %></td>
+          <td><%= User.find(friendship.sent_to_id).email%></td>
           <td><%= friendship.status %></td>
         </tr>
       <% end %>
