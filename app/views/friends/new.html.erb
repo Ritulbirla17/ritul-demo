@@ -1,0 +1,13 @@
+<h2>New Friend Request</h2>
+<%= form_tag "/friends", method: :post do %>
+  </div>
+  <div class="mb-3 mt-3">
+  <%= label_tag :sent_to_id %>
+  <%= text_field_tag :sent_to_id%>
+  </div>
+  <div>
+  <%= submit_tag "Submit", class: "btn btn-secondary" %>
+  </div>
+<%end%>
+
+

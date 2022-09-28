@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     redirect_to articles_path and return if current_user
     user = User.new

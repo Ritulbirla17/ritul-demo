@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Friends</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sent_by Id</th>
+        <th>Sent_to_Id</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friends.each do |friendship| %>
+        <tr>
+          <td><%= friendship.sent_by_id %></td>
+          <td><%= friendship.sent_to_id%></td>
+          <td><%= friendship.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Friend Request", new_friend_path %>
+</div>
